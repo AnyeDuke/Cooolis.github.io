@@ -8,6 +8,8 @@ layout: common
 
 {{ page.description | markdownify }}
 <br>
+
+{% if page.fullpath %}
 <p><b>Paths:</b> 
 	<ul style="list-style-type:none">
 	{% for ent in page.fullpath %}
@@ -15,6 +17,11 @@ layout: common
 	{% endfor %} 
 	</ul>
 </p>
+
+{% endif %}
+
+
+{% if page.resources %}
 <br>
 <b>Resources:</b> 	
 	<ul style="list-style-type:none">
@@ -23,6 +30,9 @@ layout: common
 	{% endfor %} 
 	</ul>
 <br>
+{% endif %}
+
+{% if page.resources %}
 <p><b>Acknowledgement:</b> 
 	<ul style="list-style-type:none">
 	{% for pers in page.acknowledgement %}
@@ -30,6 +40,10 @@ layout: common
 	{% endfor %} 
 	</ul>
 </p>
+{% endif %}
+
+
+{% if page.detection %}
 <br>
 <p><b>Detection:</b> 
 	<ul style="list-style-type:none">
@@ -39,6 +53,8 @@ layout: common
 	</ul>
 </p>
 <br>
+{% endif %}
+
 <br>
 
 {% for function in page.functions %}
